@@ -7,4 +7,11 @@ class CongressFacade
         senate_member = SenateMember.new(found_members.first)
         # require 'pry';binding.pry
     end
+
+    def self.house_members_by_state(state)
+        data = PropublicaService.house_member_data(state)[:results]
+        data.map do |house_mem_data|
+            HouseMember.new(house_mem_data)
+        end 
+    end
 end 
