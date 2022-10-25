@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Govt Search' do
   describe 'happy path' do
     it 'allows user to search for govt members' do
-      visit root_path
+      visit '/dashboard'
 
       fill_in :search, with: 'Sanders'
       click_button 'Search'
@@ -14,7 +14,7 @@ RSpec.describe 'Govt Search' do
     end
 
     it 'allows user to search for another govt member' do
-      visit root_path
+      visit '/dashboard'
 
       fill_in :search, with: 'Booker'
       click_button 'Search'
