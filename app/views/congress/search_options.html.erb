@@ -1,6 +1,5 @@
+Welcome <%= current_user.email %>!
 <h1>Search for Senate and House Members</h1>
-
-
 <%= form_with url: search_path, local: true do |form| %>
   <%= form.label :search, 'Search For Senators By Last Name:' %>
   <%= form.text_field :search %>

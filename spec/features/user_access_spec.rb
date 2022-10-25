@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.describe 'User Authorization Spec' do
   describe 'happy path' do
-    xit 'allows user to access dashboard, and search pages as a registered user', :vcr do
+    it 'allows user to access dashboard, and search pages as a registered user', :vcr do
       user = User.create(email: 'meg@example.com', password: 'password123')
 
       visit '/login'
@@ -32,7 +32,7 @@ RSpec.describe 'User Authorization Spec' do
   end
 
   describe 'sad path' do 
-    xit 'as a visitor, I cant access the dashboard page' do 
+    it 'as a visitor, I cant access the dashboard page' do 
         visit '/dashboard'
 
         expect(current_path).to eq('/')
