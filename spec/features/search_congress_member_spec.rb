@@ -1,7 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe 'Govt Search' do
+  describe "sad path" do
+  
+  end
   describe 'happy path' do
+    before :each do
+      stub_request(:get, "https://api.propublica.org/congress/v1/116/senate/members.json").
+         to_return(status: 200, body: File.read('spec/fixtures/propublica_response.json'), headers: {})
+    end
+
     it 'allows user to search for govt members' do
       visit root_path
 

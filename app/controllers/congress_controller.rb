@@ -4,7 +4,7 @@ class CongressController < ApplicationController
         faraday.headers["X-API-KEY"] = ENV['govt_api_key']
       end
       response = conn.get("/congress/v1/116/senate/members.json")
-  
+
       data = JSON.parse(response.body, symbolize_names: true)
   
       members = data[:results][0][:members]
