@@ -17,11 +17,11 @@
 <% if @house_members %>
   <h1><%=@house_members.size%> Results </h1>
   <% @house_members.each do |house_member| %>
-  <ul class="house-member-<%=house_member[:first_name]%>-<%=house_member[:last_name]%>">
-    <li class="name"><%= house_member[:name]%></li>
-    <li class="role"><%= house_member[:role]%></li>
-    <li class="party"><%= house_member[:party]%></li>
-    <li class="district"><%= house_member[:district]%></li>
+  <ul class="house-member-<%=house_member.first_name%>-<%=house_member.last_name%>">
+    <li class="name"><%= house_member.name%></li>
+    <li class="role"><%= house_member.role%></li>
+    <li class="party"><%= house_member.party%></li>
+    <li class="district"><%= house_member.district%></li>
   </ul>
   <% end %>
 <% end %>
