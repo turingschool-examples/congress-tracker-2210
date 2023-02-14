@@ -1,6 +1,4 @@
 class CongressController < ApplicationController
-  before_action :require_admin
-
     def search
       @member = CongressFacade.find_senate_member(params[:search])
       render :search_options
@@ -14,5 +12,4 @@ class CongressController < ApplicationController
     
     def search_options 
     end
-
   end
