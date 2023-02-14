@@ -1,2 +1,7 @@
-<%= link_to "Create an Account", "/register" %>
-<%= link_to "Login", "/login" %>
+<% if current_user %>
+    <h1>Hi, <%= current_user.email %> </h1>
+    <%= link_to "Logout"%>
+<% else %>
+    <%= link_to "Create an Account", "/register" %>
+    <%= link_to "Login", "/login" %>
+<% end %>

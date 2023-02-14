@@ -1,4 +1,6 @@
 class CongressController < ApplicationController
+  before_action :validate_user, only: :search_options
+
     def search
       @member = CongressFacade.find_senate_member(params[:search])
       render :search_options
@@ -11,5 +13,9 @@ class CongressController < ApplicationController
     end
     
     def search_options 
+      binding.pry
     end
+
   end
+
+  
